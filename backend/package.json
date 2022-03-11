@@ -6,7 +6,7 @@
     "node": "^16"
   },
   "scripts": {
-    "start": "node ./app.js",
+    "start": "MONGODB_URI=mongodb://127.0.0.1:27017 node ./app.js",
     "dev": "nodemon ./app.js",
     "seeds": "echo 'Please create seeds file'",
     "test": "newman run ./tests/api-tests.postman.json -e ./tests/env-api-tests.postman.json",
