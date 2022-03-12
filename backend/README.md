@@ -2,12 +2,6 @@
 
 The Anythink Market backend is Node web app written with [Express](https://expressjs.com/)
 
-## Getting started
-
-To start the app use: `./start.sh` from the backend directory.
-
-Make sure your DB is up and running - add MONGODB_URI=mongodb://127.0.0.1:27017 to package.json start script.
-
 ## Dependencies
 
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) - For generating JWTs used by authentication
@@ -15,6 +9,14 @@ Make sure your DB is up and running - add MONGODB_URI=mongodb://127.0.0.1:27017 
 - [mongoose-unique-validator](https://github.com/blakehaswell/mongoose-unique-validator) - For handling unique validation errors in Mongoose. Mongoose only handles validation at the document level, so a unique index across a collection will throw an exception at the driver level. The `mongoose-unique-validator` plugin helps us by formatting the error like a normal mongoose `ValidationError`.
 - [passport](https://github.com/jaredhanson/passport) - For handling user authentication
 - [slug](https://github.com/dodo/node-slug) - For encoding titles into a URL-friendly format
+
+## Configuration
+
+Make sure your DB is up and running - add MONGODB_URI=mongodb://127.0.0.1:27017 to package.json start script.
+
+## Operation
+
+To start the app use: `./start.sh` from the backend directory.
 
 ## Application Structure
 
