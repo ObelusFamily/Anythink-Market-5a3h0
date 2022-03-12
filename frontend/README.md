@@ -26,3 +26,7 @@ Make sure your server is up and running to serve requests.
 - Profile page (URL: /#/@username, /#/@username/favorites )
   - Show basic user info
   - List of items populated from seller's items or user favorite items
+
+## Troubleshooting
+
+- In case port 3000 is already in use (by Backend for instance) - switch to port 3001.

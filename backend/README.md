@@ -2,12 +2,6 @@
 
 The Anythink Market backend is Node web app written with [Express](https://expressjs.com/)
 
-## Getting started
-
-To start the app use: `./start.sh` from the backend directory.
-
-Make sure your DB is up and running.
-
 ## Dependencies
 
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) - For generating JWTs used by authentication
@@ -15,6 +9,14 @@ Make sure your DB is up and running.
 - [mongoose-unique-validator](https://github.com/blakehaswell/mongoose-unique-validator) - For handling unique validation errors in Mongoose. Mongoose only handles validation at the document level, so a unique index across a collection will throw an exception at the driver level. The `mongoose-unique-validator` plugin helps us by formatting the error like a normal mongoose `ValidationError`.
 - [passport](https://github.com/jaredhanson/passport) - For handling user authentication
 - [slug](https://github.com/dodo/node-slug) - For encoding titles into a URL-friendly format
+
+## Configuration
+
+Make sure your DB is up and running - add MONGODB_URI=mongodb://127.0.0.1:27017 to package.json start script.
+
+## Operation
+
+To start the app use: `./start.sh` from the backend directory.
 
 ## Application Structure
 
@@ -25,4 +27,9 @@ Make sure your DB is up and running.
 
 ## Error Handling
 
-In `routes/api/index.js`, we define a error-handling middleware for handling Mongoose's `ValidationError`. This middleware will respond with a 422 status code and format the response to have [error messages the clients can understand](https://github.com/gothinkster/realworld/blob/master/API.md#errors-and-status-codes)
+In `routes/api/index.js`, we define an error-handling middleware for handling Mongoose's `ValidationError`. This middleware will respond with a 422 status code and format the response to have [error messages the clients can understand](https://github.com/gothinkster/realworld/blob/master/API.md#errors-and-status-codes)
+
+## Troubleshooting
+
+- In case port 3000 is already in use (by Backend for instance):
+
