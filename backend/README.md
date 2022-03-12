@@ -28,3 +28,8 @@ To start the app use: `./start.sh` from the backend directory.
 ## Error Handling
 
 In `routes/api/index.js`, we define an error-handling middleware for handling Mongoose's `ValidationError`. This middleware will respond with a 422 status code and format the response to have [error messages the clients can understand](https://github.com/gothinkster/realworld/blob/master/API.md#errors-and-status-codes)
+
+## Troubleshooting
+
+- In case port 3000 is already in use (by Backend for instance):
+
