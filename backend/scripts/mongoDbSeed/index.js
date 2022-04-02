@@ -25,7 +25,7 @@ async function seedDB() {
     await client.connect();
     console.log("Connected correctly to server");
 
-    const collection = client.db("test").collection("users");
+    const collection = client.db("admin").collection("users");
 
     const insertQuery = [];
 
