@@ -19,32 +19,36 @@ async function seedDB() {
   });
 
   try {
+
+    const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+
     await client.connect();
     console.log("Connected correctly to server");
 
-    const collection = client.db("test").collection("items");
+    const collection = client.db("test").collection("users");
 
     const insertQuery = [];
 
-    for (let i = 0; i < 5; i++) {
-      const randomStr = (Math.random() + 1).toString(36).substring(7);
-      const randomTitle = faker.commerce.product();
+    for (let i = 0; i < 300; i++) {
+      const randomStr = genRanHex(32);
+      const randomHash = genRanHex(1024);
       const date = faker.date.past();
-      const newItem = {
-        favoritesCount: 0,
-        comments: [],
-        tagList: [],
-        title: randomTitle,
-        description: faker.hacker.phrase(),
-        image: faker.image.avatar(),
-        seller: ObjectId("622b8e1739c8fd4464700dd5"),
-        slug: `${randomTitle}-${randomStr}`,
+      const firstName = faker.name.firstName();
+      const lastName = faker.name.lastName();
+      const newUser = {
+        role: 'user',
+        favorites: [],
+        following: [],
+        username: firstName,
+        email: faker.internet.email(firstName, lastName),
+        salt: randomStr,
+        hash: randomHash,
         createdAt: date,
         updatedAt: date,
-        __v: 1
+        __v: 0
       }
 
-      insertQuery.push(newItem);
+      insertQuery.push(newUser);
     }
     await collection.insertMany(insertQuery);
 
