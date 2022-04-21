@@ -86,6 +86,7 @@ router.get("/", auth.optional, function(req, res, next) {
         return res.json({
           items: await Promise.all(
             items.map(async function(item) {
+              item.image = item.image || "/placeholder.png";
               item.seller = await User.findById(item.seller);
               return item.toJSONFor(user);
             })
