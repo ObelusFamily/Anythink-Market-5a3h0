@@ -36,7 +36,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image || "/placeholder.png"}
+        src={item.image}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
@@ -54,7 +54,7 @@ const ItemPreview = (props) => {
             />
           </Link>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
-            <i className="ion-heart"></i> {item.favoritesCount}
+            <i className="ion-heart" /> {item.favoritesCount}
           </button>
         </div>
       </div>

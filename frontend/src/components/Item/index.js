@@ -60,7 +60,7 @@ class Item extends React.Component {
             <div className="col-6">
               <h1>{this.props.item.title}</h1>
               <ItemMeta item={this.props.item} canModify={canModify} />
-              <div dangerouslySetInnerHTML={markup}></div>
+              <div dangerouslySetInnerHTML={markup} />
               {this.props.item.tagList.map((tag) => {
                 return (
                   <span className="badge badge-secondary p-2 mx-1" key={tag}>
