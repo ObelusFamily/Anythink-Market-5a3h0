@@ -47,8 +47,8 @@ class Item extends React.Component {
     return (
       <div className="container page">
         <div className="text-dark">
-          <div className="row bg-white p-4">
-            <div className="col-6">
+          <div className="row bg-white p-4 flex-column-mobile">
+            <div className="col-6 max-width-mobile">
               <img
                 src={this.props.item.image}
                 alt={this.props.item.title}
@@ -57,7 +57,7 @@ class Item extends React.Component {
               />
             </div>
 
-            <div className="col-6">
+            <div className="col-6 max-width-mobile">
               <h1>{this.props.item.title}</h1>
               <ItemMeta item={this.props.item} canModify={canModify} />
               <div dangerouslySetInnerHTML={markup} />
